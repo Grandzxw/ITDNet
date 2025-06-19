@@ -41,3 +41,19 @@ After preparing the training data, you can start training ITDNet on different da
 - **Single-GPU training:**
   ```bash
   python train_itdnet_kitti.py
+
+
+#### Boreas
+
+- **Distributed training (4 GPUs):**
+  ```bash
+  torchrun --nproc_per_node=4 train_itdnet_boreas_dis.py
+
+
+#### Weather-Apollo
+
+- **Distributed training (4 GPUs):**
+  ```bash
+  torchrun --nproc_per_node=4 train_itdnet_apollo_dis.py
+
+Note: Single-GPU versions for Boreas and Weather-Apollo can be added similarly if needed.
