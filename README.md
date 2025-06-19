@@ -22,6 +22,19 @@
 <img src = "./fig/main.png"> 
 
 
-## Installation and Data Preparation
+### Installation and Data Preparation
 
 See [INSTALL.md](INSTALL.md) for the installation of dependencies and dataset preperation required to run this codebase.
+
+
+
+### Training
+
+After preparing the training data, you can start training ITDNet on different datasets using either single-GPU or multi-GPU settings.
+
+#### Weather-KITTI
+
+- **Distributed training (4 GPUs):**
+  ```bash
+  torchrun --nproc_per_node=4 train_itdnet_kitti_dis.py
+
