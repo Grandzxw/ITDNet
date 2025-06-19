@@ -62,12 +62,12 @@ Note: Single-GPU versions for Boreas and Weather-Apollo can be added similarly i
 #### Weather-KITTI
   ```bash
   python test_itdnet_kitti.py
+```
 
 #### Boreas
   ```bash
   python test_itdnet_boreas.py
-
-
+```
 
 
 ## Citation
