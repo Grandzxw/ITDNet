@@ -8,7 +8,7 @@
    Haojie Bai<sup>1</sup>,
   <a href="https://scholar.google.com.sg/citations?user=OTBgvCYAAAAJ&hl=zh-CN&oi=ao">Congcong Wen</a><sup>4</sup>,
   Rundong Zhou<sup>5</sup>,
-  Qihao Sun<sup>1</sup>,
+  Qihao Sun<sup>1</sup>
 </p>
 
 <p><sup>1</sup>Harbin Institute of Technology&nbsp;&nbsp;<sup>2</sup>National University of Defense Technology&nbsp;&nbsp;<sup>3</sup>Shenzhen Institute of Information Technology&nbsp;&nbsp;<sup>4</sup>Harvard University&nbsp;&nbsp;<sup>5</sup>Shenzhen Polytechnic University</p>
@@ -75,11 +75,14 @@ If you find our work useful in your research, please consider citing:
 ```bibtex
 @article{zhao2025iterative,
   title={An Iterative Task-Driven Framework for Resilient LiDAR Place Recognition in Adverse Weather},
-  author={Zhao, Xiongwei and Wang, Yang and Sun, Qihao and Bai, Haojie and Xie, Xingxiang},
+  author={Zhao, Xiongwei and Chen, Xieyuanli and Zhu, Xu and Xie, Xingxiang and Bai, Haojie and Wen, Congcong and Zhou, Rundong and Sun, Qihao},
   journal={arXiv preprint arXiv:2504.14806},
   year={2025}
 }
 ```
+
+Xiongwei Zhao1, Xieyuanli Chen, Xu Zhu, Xingxiang Xie, Haojie Bai, Congcong Wen, Rundong Zhou, Qihao Sun,
+
 
 ### Contact
 Should you have any questions, please contact xwzhao@stu.hit.edu.cn
