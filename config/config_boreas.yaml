@@ -1,0 +1,48 @@
+data_root:
+  vlad_data_root_folder: "/data1/Boreas/transform/range_image_vlad/Rangeimage_Clean_test2_5300/"
+  res_data_root_folder: "/data1/Boreas/transform/range_image_restore/"
+
+
+training_config:
+  # KITTI sequences for training
+  restore_training_seqs: ["02","03","04"]
+  vlad_training_seqs: ["01"]
+  patch_height: 32
+  patch_width: 480
+  #training_seqs: ["04"]
+  # training log folder
+  log_folder: "./log"
+  # pretrained model
+  pretrained_vlad_model: ""
+  pretrained_resnet_model: ""
+  pos_threshold: 30
+  neg_threshold: 50
+  res_batch_size: 12
+  vlad_batch_size: 14
+  epoch: 301
+  save_res_path: "/data1/Code/ITRNet/logs/boreas_02-04_clean/"
+  save_vlad_path: "/data1/Code/ITRNet/logs/boreas_02-04_clean/"
+
+
+val_config:
+  datapath_query: "/data1/Boreas/transform/range_image_vlad/Rangeimage_heavy_8900/"
+  # datapath_query: "/data1/Boreas/transform/range_image_vlad/Rangeimage_Clean_test2_5300/"
+  datapath_database: "/data1/Boreas/transform/range_image_vlad/Rangeimage_Clean_test1_5700/"
+
+
+
+# 08  00
+test_config:
+  # KITTI sequence 00 for evaluation
+  datapath_query: "/data1/Boreas/transform/range_image_vlad/Restore_Rangeimage_heavy_8900/"
+  datapath_database: "/data1/Boreas/transform/range_image_vlad/Rangeimage_Clean_test1_5700/"
+
+
+  # pretrained model
+  test_res_model: "/data1/Code/ITRNet/logs/boreas_02-04_clean/Restore_model_lakder/Epoch_295.ckpt"
+  test_vlad_model: "/data1/Code/ITRNet/logs/boreas_02-04_clean/vlad_model_lakder/Epoch_295_recall_[0.67].ckpt"
+  th_min: 0
+  th_max: 15
+  th_max_pre: 15
+  skip: 50
+  batch_num: 2

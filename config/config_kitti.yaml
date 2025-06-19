@@ -1,0 +1,50 @@
+data_root:
+  data_root_folder: "/data1/KITTI/Weather_KITTI_PR_RANGE"
+  pose_path: "/data1/KITTI/poses/"
+  
+
+
+training_config:
+  # KITTI sequences for training
+  training_seqs: ['03',"04",'05','06','07',"09",'10']
+  # training_seqs: ["04"]
+  training_seqs_vlad: ['00']
+  patch_height: 32
+  patch_width: 480
+  #training_seqs: ["04"]
+  # training log folder
+  log_folder: "./log"
+  # pretrained model
+  pretrained_vlad_model: ""
+  pretrained_resnet_model: ""
+  pos_threshold: 10
+  neg_threshold: 50
+  batch_size: 12
+  epoch: 300
+  save_res_path: "/data1/Code/ITRNet/logs/kitti_03-10_clean/"
+  save_vlad_path: "/data1/Code/ITRNet/logs/kitti_03-10_clean/"
+
+
+val_config:
+  datapath_query: "/data1/KITTI/Weather_KITTI_PR_RANGE/07/"
+  datapath_database: "/data1/KITTI/ORI_KITTI_PR_RANGE/07/"
+
+# /home/sxx-204/data/zxw_data/SNOW-KITTI/rangeimage/02
+# /data1/KITTI/Weather_KITTI_PR_RANGE/02
+# 08  00
+# SNOW/FOG
+
+test_config:
+  # KITTI sequence 00 for evaluation
+  seq: "07"
+  datapath_query: "/data1/FOG-KITTI/rangeimage/07/"
+  datapath_database: "/data1/KITTI/ORI_KITTI_PR_RANGE/07/"
+
+  # pretrained model
+  test_res_model: "/data1/Code/ITRNet/logs/kitti_03-10_clean/Restore_model_lakder/Epoch_55_psnr_29.144378662109375_ssim_0.9299769997596741.ckpt"
+  test_vlad_model: "/data1/Code/ITRNet/logs/kitti_03-10_clean/vlad_model_lakder/Epoch_275_recall_[0.7704918].ckpt"
+  th_min: 0
+  th_max: 10
+  th_max_pre: 10
+  skip: 50
+  batch_num: 2
