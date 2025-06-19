@@ -70,19 +70,18 @@ Note: Single-GPU versions for Boreas and Weather-Apollo can be added similarly i
 ```
 
 
-## Citation
-If you use our work, please consider citing:
-
+### Citation
+If you find our work useful in your research, please consider citing:
+```bibtex
 @article{zhao2025iterative,
   title={An Iterative Task-Driven Framework for Resilient LiDAR Place Recognition in Adverse Weather},
   author={Zhao, Xiongwei and Wang, Yang and Sun, Qihao and Bai, Haojie and Xie, Xingxiang},
   journal={arXiv preprint arXiv:2504.14806},
   year={2025}
 }
+```
 
-
-## Contact
+### Contact
 Should you have any questions, please contact xwzhao@stu.hit.edu.cn
 
-
-**Acknowledgment:** This code is based on the [PromptIR](https://github.com/va1shn9v/PromptIR) and [TripleMixer](https://github.com/Grandzxw/TripleMixer) repositories. 
+**Acknowledgment:** This code is based on the [PromptIR](https://github.com/va1shn9v/PromptIR), [TripleMixer](https://github.com/Grandzxw/TripleMixer) and [OverlapTransformer](https://github.com/haomo-ai/OverlapTransformer) repositories. 
