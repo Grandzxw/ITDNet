@@ -81,8 +81,6 @@ If you find our work useful in your research, please consider citing:
 }
 ```
 
-Xiongwei Zhao1, Xieyuanli Chen, Xu Zhu, Xingxiang Xie, Haojie Bai, Congcong Wen, Rundong Zhou, Qihao Sun,
-
 
 ### Contact
 Should you have any questions, please contact xwzhao@stu.hit.edu.cn
