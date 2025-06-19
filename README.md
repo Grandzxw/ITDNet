@@ -21,3 +21,7 @@
 
 <img src = "./fig/main.png"> 
 
+
+## Installation and Data Preparation
+
+See [INSTALL.md](INSTALL.md) for the installation of dependencies and dataset preperation required to run this codebase.
