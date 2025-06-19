@@ -38,3 +38,6 @@ After preparing the training data, you can start training ITDNet on different da
   ```bash
   torchrun --nproc_per_node=4 train_itdnet_kitti_dis.py
 
+- **Single-GPU training:**
+  ```bash
+  python train_itdnet_kitti.py
