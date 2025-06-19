@@ -55,3 +55,34 @@ After preparing the training data, you can start training ITDNet on different da
   torchrun --nproc_per_node=4 train_itdnet_apollo_dis.py
 
 Note: Single-GPU versions for Boreas and Weather-Apollo can be added similarly if needed.
+
+
+### Test
+
+#### Weather-KITTI
+  ```bash
+  python test_itdnet_kitti.py
+
+#### Boreas
+  ```bash
+  python test_itdnet_boreas.py
+
+
+
+
+## Citation
+If you use our work, please consider citing:
+
+@article{zhao2025iterative,
+  title={An Iterative Task-Driven Framework for Resilient LiDAR Place Recognition in Adverse Weather},
+  author={Zhao, Xiongwei and Wang, Yang and Sun, Qihao and Bai, Haojie and Xie, Xingxiang},
+  journal={arXiv preprint arXiv:2504.14806},
+  year={2025}
+}
+
+
+## Contact
+Should you have any questions, please contact xwzhao@stu.hit.edu.cn
+
+
+**Acknowledgment:** This code is based on the [PromptIR](https://github.com/va1shn9v/PromptIR) and [TripleMixer](https://github.com/Grandzxw/TripleMixer) repositories. 
