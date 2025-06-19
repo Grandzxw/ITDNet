@@ -190,7 +190,7 @@ class Upsample(nn.Module):
 
 
 
-class ITRNet_D(nn.Module):
+class ITDNet_D(nn.Module):
     def __init__(self, 
         inp_channels=2, 
         out_channels=2, 
@@ -202,7 +202,7 @@ class ITRNet_D(nn.Module):
         LayerNorm_type = 'WithBias',  
         dual_pixel_task = True        
     ):
-        super(ITRNet_D, self).__init__()
+        super(ITDNet_D, self).__init__()
 
         self.embed = nn.Conv2d(inp_channels, dim, kernel_size=3, stride=1, padding=1, bias=bias)
 
@@ -311,4 +311,4 @@ if __name__ == '__main__':
 
     x1 = torch.randn(2, 2, 64, 1920) 
 
-    model = ITRNet_D().cuda().eval()
+    model = ITDNet_D().cuda().eval()

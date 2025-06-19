@@ -23,8 +23,8 @@ if p not in sys.path:
 from tools.database_boreas import boreas_dataset, PromptTrainDataset, DeweatherDataset
 from tools.schedulers import LinearWarmupCosineAnnealingLR
 from model.loss import triplet_margin_loss
-from model.ITRNet.ITR_res import ITRNet_D 
-from model.ITRNet.ITR_lpr import ITRNet_P
+from model.ITDNet.ITD_res import ITDNet_D 
+from model.ITDNet.ITD_lpr import ITDNet_P
 import matplotlib.pyplot as plt
 import datetime
 import pandas as pd
@@ -189,8 +189,8 @@ def train(config):
     print("val_dataset database len is: ", len(val_dataset_database))
 
 
-    resnet = ITRNet_D().to(device)
-    vlad = ITRNet_P().to(device)
+    resnet = ITDNet_D().to(device)
+    vlad = ITDNet_P().to(device)
     
 
     if pretrained_vlad_model:
@@ -281,7 +281,7 @@ def train(config):
             plt.title('Res Loss vs Epochs')
             plt.legend()
             plt.grid(True)
-            plt.savefig(f'/data1/Code/ITRNet/logs/boreas_02-04_clean/fig/res_loss_vs_epochs.png')
+            plt.savefig(f'/data1/Code/ITDNet/logs/boreas_02-04_clean/fig/res_loss_vs_epochs.png')
             plt.close()
             
             plt.figure(figsize=(10, 6))
@@ -291,7 +291,7 @@ def train(config):
             plt.title('Vlad eval Loss vs Epochs')
             plt.legend()
             plt.grid(True)
-            plt.savefig(f'/data1/Code/ITRNet/logs/boreas_02-04_clean/fig/vlad_eval_loss_vs_epochs.png')
+            plt.savefig(f'/data1/Code/ITDNet/logs/boreas_02-04_clean/fig/vlad_eval_loss_vs_epochs.png')
             plt.close()
             
             scheduler_restore.step()
@@ -352,7 +352,7 @@ def train(config):
             plt.title('Vlad Loss vs Epochs')
             plt.legend()
             plt.grid(True)
-            plt.savefig(f'/data1/Code/ITRNet/logs/boreas_02-04_clean/fig/Vlad_loss_vs_epochs.png')
+            plt.savefig(f'/data1/Code/ITDNet/logs/boreas_02-04_clean/fig/Vlad_loss_vs_epochs.png')
             plt.close()
 
             scheduler_vlad.step()

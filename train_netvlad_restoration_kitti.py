@@ -18,16 +18,13 @@ if p not in sys.path:
 from tools.database_kitti import kitti_dataset, PromptTrainDataset, DeweatherDataset
 from tools.schedulers import LinearWarmupCosineAnnealingLR
 from model.loss import triplet_margin_loss
-from model.ITRNet.ITR_res import ITRNet_D 
-from model.ITRNet.ITR_lpr import ITRNet_P
+from model.ITDNet.ITD_res import ITDNet_D 
+from model.ITDNet.ITD_lpr import ITDNet_P
 import matplotlib.pyplot as plt
 from tools.val_utils import AverageMeter, compute_psnr_ssim
 from tools.image_io import save_image_tensor, save_npy, torch_to_np, process_channels, torch_to_np_batch
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '3'
-print("CUDA available:", torch.cuda.is_available())
-print("CUDA device count:", torch.cuda.device_count())
-print("Current CUDA device index:", torch.cuda.current_device())
 if torch.cuda.is_available():
     for i in range(torch.cuda.device_count()):
         print(f"Device {i}: {torch.cuda.get_device_name(i)}")
@@ -136,8 +133,8 @@ def train(config):
     print("val_dataset database len is: ", len(val_dataset_database))
 
     
-    resnet = ITRNet_D().to(device=device)
-    vlad = ITRNet_P().to(device=device)
+    resnet = ITDNet_D().to(device=device)
+    vlad = ITDNet_P().to(device=device)
     
 
     if not pretrained_vlad_model == "":
@@ -196,16 +193,9 @@ def train(config):
                 out_res  = resnet(degrad_patch)
                 res_loss = criterion_res(out_res,clean_patch)
                 
-                # with torch.no_grad():
-                #clean_res = resnet(clean_patch)
                 degrad_dec =  vlad(out_res)
                 clean_dec = vlad(clean_patch)
                 
-                # vlad_loss = 1 - torch.nn.functional.cosine_similarity(degrad_dec, clean_dec, dim=1).mean()
-                # print("vlad_loss is: ", vlad_loss.item())
-
-                # p = F.softmax(degrad_dec, dim=1)
-                # q = F.softmax(clean_dec, dim=1)
 
                 # # 计算 KL 散度损失
                 vlad_loss = torch.norm(degrad_dec - clean_dec, dim=1, p=2)**2
@@ -233,7 +223,7 @@ def train(config):
             plt.title('Res Loss vs Epochs')
             plt.legend()
             plt.grid(True)
-            plt.savefig(f'/data1/Code/ITRNet/logs/kitti_03-10_clean/fig/res_loss_vs_epochs.png')
+            plt.savefig(f'/data1/Code/ITDNet/logs/kitti_03-10_clean/fig/res_loss_vs_epochs.png')
             plt.close()
             
             
@@ -244,7 +234,7 @@ def train(config):
             plt.title('Vlad eval Loss vs Epochs')
             plt.legend()
             plt.grid(True)
-            plt.savefig(f'/data1/Code/ITRNet/logs/kitti_03-10_clean/fig/vlad_eval_loss_vs_epochs.png')
+            plt.savefig(f'/data1/Code/ITDNet/logs/kitti_03-10_clean/fig/vlad_eval_loss_vs_epochs.png')
             plt.close()
             
             scheduler_restore.step()
@@ -303,7 +293,7 @@ def train(config):
             plt.title('Vlad Loss vs Epochs')
             plt.legend()
             plt.grid(True)
-            plt.savefig(f'/data1/Code/ITRNet/logs/kitti_03-10_clean/fig/Vlad_loss_vs_epochs.png')
+            plt.savefig(f'/data1/Code/ITDNet/logs/kitti_03-10_clean/fig/Vlad_loss_vs_epochs.png')
             plt.close()
 
             scheduler_vlad.step()

@@ -16,9 +16,9 @@ from .PyramidNetVLAD import WPNNetVLAD
 from .Swin_MFT import MFTBlock
 
 
-class ITRNet_P(nn.Module):
+class ITDNet_P(nn.Module):
     def __init__(self, height=64, width=900, channels=2, dct_kernel=(8,8), num_heads=[2, 4, 8], drop_paths=0.):
-        super(ITRNet_P, self).__init__()
+        super(ITDNet_P, self).__init__()
         self.dct_kernel = dct_kernel
         self.num_heads = num_heads
 
@@ -103,7 +103,7 @@ class ITRNet_P(nn.Module):
 if __name__ == '__main__':
 
     combined_tensor = torch.randn(2,2,64,1024).cuda()
-    feature_extracter=ITRNet_P()
+    feature_extracter=ITDNet_P()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     feature_extracter.to(device)
 

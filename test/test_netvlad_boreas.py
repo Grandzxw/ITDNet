@@ -23,8 +23,8 @@ if p not in sys.path:
 from tools.database_boreas import boreas_dataset, PromptTrainDataset, DeweatherDataset
 from tools.schedulers import LinearWarmupCosineAnnealingLR
 from model.loss import triplet_margin_loss
-from model.ITRNet.ITR_res import ITRNet_D 
-from model.ITRNet.ITR_lpr import ITRNet_P
+from model.ITDNet.ITD_res import ITDNet_D 
+from model.ITDNet.ITD_lpr import ITDNet_P
 import matplotlib.pyplot as plt
 from tools.val_utils import AverageMeter, compute_psnr_ssim
 from tools.image_io import save_image_tensor, save_npy, torch_to_np, process_channels, torch_to_np_batch
@@ -93,8 +93,8 @@ def test(config):
         shuffle=True, num_workers=8)
     print("val_dataset database len is: ", len(test_dataset_database))
 
-    resnet = ITRNet_D().to(device)
-    vlad = ITRNet_P().to(device)
+    resnet = ITDNet_D().to(device)
+    vlad = ITDNet_P().to(device)
 
     checkpoint = torch.load(config["test_config"]["test_res_model"], map_location=device)
     state_dict = checkpoint["state_dict"]
@@ -166,6 +166,6 @@ def test(config):
 
 if __name__ == "__main__":
     world_size = torch.cuda.device_count()
-    config_path = "/data1/Code/ITRNet/config/config_boreas.yaml"
+    config_path = "/data1/Code/ITDNet/config/config_boreas.yaml"
     config = yaml.safe_load(open(config_path))
     test(config)  # 直接运行 train()

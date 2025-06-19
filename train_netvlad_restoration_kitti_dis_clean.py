@@ -25,8 +25,8 @@ if p not in sys.path:
 from tools.database_kitti import kitti_dataset, PromptTrainDataset, DeweatherDataset
 from tools.schedulers import LinearWarmupCosineAnnealingLR
 from model.loss import triplet_margin_loss
-from model.ITRNet.ITR_res import ITRNet_D 
-from model.ITRNet.ITR_lpr import ITRNet_P
+from model.ITDNet.ITD_res import ITDNet_D 
+from model.ITDNet.ITD_lpr import ITDNet_P
 
 import matplotlib.pyplot as plt
 from tools.val_utils import AverageMeter, compute_psnr_ssim
@@ -216,8 +216,8 @@ def train(config):
     val_sampler_database = DistributedSampler(val_dataset_database, num_replicas=dist.get_world_size(), rank=dist.get_rank(), shuffle=False, drop_last=False)
     val_loader_database = DataLoader(dataset=val_dataset_database, batch_size=20, shuffle=False, num_workers=8, sampler=val_sampler_database)
 
-    resnet = ITRNet_D().to(device)
-    vlad = ITRNet_P().to(device)
+    resnet = ITDNet_D().to(device)
+    vlad = ITDNet_P().to(device)
 
     if pretrained_resnet_model:
         resnet.load_state_dict(torch.load(config["training_config"]["pretrained_resnet_model"], map_location=device))
@@ -298,7 +298,7 @@ def train(config):
             plt.title('Res Loss vs Epochs')
             plt.legend()
             plt.grid(True)
-            plt.savefig(f'/data1/Code/ITRNet/logs/kitti_03-10_clean/fig/res_loss_vs_epochs.png')
+            plt.savefig(f'/data1/Code/ITDNet/logs/kitti_03-10_clean/fig/res_loss_vs_epochs.png')
             plt.close()
             
             
@@ -309,7 +309,7 @@ def train(config):
             plt.title('Vlad eval Loss vs Epochs')
             plt.legend()
             plt.grid(True)
-            plt.savefig(f'/data1/Code/ITRNet/logs/kitti_03-10_clean/fig/vlad_eval_loss_vs_epochs.png')
+            plt.savefig(f'/data1/Code/ITDNet/logs/kitti_03-10_clean/fig/vlad_eval_loss_vs_epochs.png')
             plt.close()
             
             scheduler_restore.step()
@@ -366,7 +366,7 @@ def train(config):
             plt.title('Vlad Loss vs Epochs')
             plt.legend()
             plt.grid(True)
-            plt.savefig(f'/data1/Code/ITRNet/logs/kitti_03-10_clean/fig/Vlad_loss_vs_epochs.png')
+            plt.savefig(f'/data1/Code/ITDNet/logs/kitti_03-10_clean/fig/Vlad_loss_vs_epochs.png')
             plt.close()
             scheduler_vlad.step()
 
@@ -449,7 +449,7 @@ def train(config):
 
 
 if __name__ == "__main__":
-    config_path = "/data1/Code/ITRNet/config/config_kitti.yaml"
+    config_path = "/data1/Code/ITDNet/config/config_kitti.yaml"
     config = yaml.safe_load(open(config_path))
 
     train(config)  # 直接运行 train()

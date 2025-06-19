@@ -21,8 +21,8 @@ training_config:
   neg_threshold: 50
   batch_size: 12
   epoch: 300
-  save_res_path: "/data1/Code/ITRNet/logs/kitti_03-10_clean/"
-  save_vlad_path: "/data1/Code/ITRNet/logs/kitti_03-10_clean/"
+  save_res_path: "/data1/Code/ITDNet/logs/kitti_03-10_clean/"
+  save_vlad_path: "/data1/Code/ITDNet/logs/kitti_03-10_clean/"
 
 
 val_config:
@@ -41,8 +41,8 @@ test_config:
   datapath_database: "/data1/KITTI/ORI_KITTI_PR_RANGE/07/"
 
   # pretrained model
-  test_res_model: "/data1/Code/ITRNet/logs/kitti_03-10_clean/Restore_model_lakder/Epoch_55_psnr_29.144378662109375_ssim_0.9299769997596741.ckpt"
-  test_vlad_model: "/data1/Code/ITRNet/logs/kitti_03-10_clean/vlad_model_lakder/Epoch_275_recall_[0.7704918].ckpt"
+  test_res_model: "/data1/Code/ITDNet/logs/kitti_03-10_clean/Restore_model_lakder/Epoch_55_psnr_29.144378662109375_ssim_0.9299769997596741.ckpt"
+  test_vlad_model: "/data1/Code/ITDNet/logs/kitti_03-10_clean/vlad_model_lakder/Epoch_275_recall_[0.7704918].ckpt"
   th_min: 0
   th_max: 10
   th_max_pre: 10

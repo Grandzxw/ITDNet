@@ -20,8 +20,8 @@ training_config:
   res_batch_size: 12
   vlad_batch_size: 14
   epoch: 301
-  save_res_path: "/data1/Code/ITRNet/logs/boreas_02-04_clean/"
-  save_vlad_path: "/data1/Code/ITRNet/logs/boreas_02-04_clean/"
+  save_res_path: "/data1/Code/ITDNet/logs/boreas_02-04_clean/"
+  save_vlad_path: "/data1/Code/ITDNet/logs/boreas_02-04_clean/"
 
 
 val_config:
@@ -39,8 +39,8 @@ test_config:
 
 
   # pretrained model
-  test_res_model: "/data1/Code/ITRNet/logs/boreas_02-04_clean/Restore_model_lakder/Epoch_295.ckpt"
-  test_vlad_model: "/data1/Code/ITRNet/logs/boreas_02-04_clean/vlad_model_lakder/Epoch_295_recall_[0.67].ckpt"
+  test_res_model: "/data1/Code/ITDNet/logs/boreas_02-04_clean/Restore_model_lakder/Epoch_295.ckpt"
+  test_vlad_model: "/data1/Code/ITDNet/logs/boreas_02-04_clean/vlad_model_lakder/Epoch_295_recall_[0.67].ckpt"
   th_min: 0
   th_max: 15
   th_max_pre: 15
