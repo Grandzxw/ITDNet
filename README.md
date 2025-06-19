@@ -19,7 +19,7 @@
 <hr />
 
 
-## System Architecture
+### System Architecture
 
 <img src = "./fig/main.png"> 
 
