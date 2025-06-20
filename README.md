@@ -86,3 +86,8 @@ If you find our work useful in your research, please consider citing:
 Should you have any questions, please contact xwzhao@stu.hit.edu.cn
 
 **Acknowledgment:** This code is based on the [PromptIR](https://github.com/va1shn9v/PromptIR), [TripleMixer](https://github.com/Grandzxw/TripleMixer) and [OverlapTransformer](https://github.com/haomo-ai/OverlapTransformer) repositories. 
+
+
+### License
+The code and datasets are provided under the [Apache-2.0 license](https://github.com/Grandzxw/MMF-LVINS/blob/main/LICENSE)
+
