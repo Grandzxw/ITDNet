@@ -1,4 +1,5 @@
-<h3> [An Iterative Task-Driven Framework for Resilient LiDAR Place Recognition in Adverse Weather](https://arxiv.org/abs/2504.14806) </h3>
+
+### [An Iterative Task-Driven Framework for Resilient LiDAR Place Recognition in Adverse Weather](https://example.com/article-link)
 
 <p>
   <a href="https://scholar.google.com.sg/citations?hl=zh-CN&user=miv8T6MAAAAJ&view_op=list_works&sortby=pubdate">Xiongwei Zhao</a><sup>1</sup>,
