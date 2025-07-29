@@ -80,16 +80,6 @@ If you find our work useful in your research, please consider citing:
   journal={arXiv preprint arXiv:2504.14806},
   year={2025}
 }
-or
-@misc{zhao2025iterativetaskdrivenframeworkresilient,
-      title={An Iterative Task-Driven Framework for Resilient LiDAR Place Recognition in Adverse Weather}, 
-      author={Xiongwei Zhao and Xieyuanli Chen and Xu Zhu and Xingxiang Xie and Haojie Bai and Congcong Wen and Rundong Zhou and Qihao Sun},
-      year={2025},
-      eprint={2504.14806},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO},
-      url={https://arxiv.org/abs/2504.14806}, 
-}
 ```
 
 
